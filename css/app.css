@@ -1,0 +1,46 @@
+.navbar-fixed-side{
+    /*height: 40%; !* 100% Full-height *!*/
+    /*width: 200px; !* 0 width - change this with JavaScript *!*/
+    /*position: fixed; !* Stay in place *!*/
+    /*z-index: 1; !* Stay on top *!*/
+    /*top: 70px; !* Stay at the top *!*/
+    /*left: 5px;*/
+    font-size: 20px; /* Black*/
+    -webkit-border-radius: 10px;
+    border: #0f0f0f;
+    /*overflow-x: hidden; !* Disable horizontal scroll *!*/
+    /*padding-top: 60px; !* Place content 60px from the top *!*/
+    /*transition: 0.5s; !* 0.5 second transition effect to slide in the sidenav *!*/
+}
+
+/*.sidenav {*/
+    /*height: 100%;*/
+    /*width: 160px;*/
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*background-color: #111;*/
+    /*overflow-x: hidden;*/
+    /*padding-top: 20px;*/
+/*}*/
+
+.navbar-fixed-side a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    -webkit-border-radius: 10px;
+    border: #0f0f0f;
+    color: #818181;
+
+    display: block;
+    transition: 0.3s;
+}
+
+.navbar-fixed-side a:hover {
+    color: #f1f1f1;
+    border-color: #0f0f0f;
+
+}
+
+

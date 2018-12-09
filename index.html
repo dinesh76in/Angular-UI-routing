@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<head>
+    <meta charset="utf-8">
+    <title>E Passport</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/navbar-fixed-side.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script src="angular/1.6.4/angular.min.js"></script>
+    <script src="angular/1.6.4/angular-route.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="Container">
+
+    <div class="navbar-fixed-side">
+        <div class="nav nav-pills">
+
+            <ul >
+                <a href="#/!">Menu2</a>
+                <a href="#!contact">Contact</a>
+                <a href="#!service">Service</a>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div ng-view></div>
+
+</div>
+
+
+<!--<div ng-include src="'templates/sidemenu.html'"></div>-->
+
+
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "menu.html",
+                controller: "MenuCtrl"
+            })
+            .when("/contact", {
+                templateUrl: "contact.html",
+                controller: "ContactCtrl"
+            })
+            .when("/service", {
+                templateUrl: "service.html",
+                controller: "ServiceCtrl"
+            });
+    });
+    app.controller("MenuCtrl", function ($scope, $http) {
+        $http.get("menu.json").then(function (response) {
+            $scope.menu = response.data;
+
+        })
+    });
+    app.controller("ContactCtrl", function ($scope, $http) {
+        $http.get("contact.json").then(function (response) {
+            $scope.contact = response.data;
+        })
+    });
+    app.controller("ServiceCtrl", function ($scope) {
+        $scope.msg = "msg is controlled by ServiceCtrl"
+    });
+
+
+</script>
+</body>
+</html>
